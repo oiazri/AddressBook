@@ -45,9 +45,8 @@ Country: ${contact.country}
 }
 
 function searchContacts(keyword) {
-  const searchContacts = contacts.filter((contacts) =>
-    contacts.name.includes(keyword)
-  );
+  const results = contacts.filter((contact) => contact.name.includes(keyword));
+  return results;
 }
 
 function addContact(name, age, email, phone, address, country) {
@@ -65,7 +64,8 @@ function addContact(name, age, email, phone, address, country) {
     country,
   });
 }
-searchContacts("R");
+const results = searchContacts("minato");
+console.log(results);
 
 addContact(
   "siregar",
