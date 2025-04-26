@@ -64,8 +64,6 @@ function addContact(name, age, email, phone, address, country) {
     country,
   });
 }
-const results = searchContacts("r");
-console.log(results);
 
 addContact(
   "siregar",
