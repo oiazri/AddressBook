@@ -1,4 +1,4 @@
-const contacts = [
+let contacts = [
   {
     id: 1,
     name: "Alexandro Carlos",
@@ -33,7 +33,7 @@ function listContacts() {
     const contact = contacts[index];
 
     console.log(`
-id: ${contact.id}      
+ID: ${contact.id}
 Name: ${contact.name}
 Age: ${contact.age} year old
 Email: ${contact.email}
@@ -45,7 +45,9 @@ Country: ${contact.country}
 }
 
 function searchContacts(keyword) {
-  const results = contacts.filter((contact) => contact.name.includes(keyword));
+  const results = contacts.filter((contact) =>
+    contact.name.toLowerCase().includes(keyword.toLowerCase())
+  );
   return results;
 }
 
@@ -65,8 +67,13 @@ function addContact(name, age, email, phone, address, country) {
   });
 }
 
+function deleteContact(id) {
+  const updatedContacts = contacts.filter((contact) => contact.id !== id);
+  contacts = updatedContacts;
+}
+
 addContact(
-  "siregar",
+  "Siregar",
   30,
   "siregar@gmail.com",
   "Jakarta",
@@ -81,5 +88,7 @@ addContact(
   "+62232244",
   "Indonesia"
 );
+
+deleteContact(2);
 
 listContacts();
