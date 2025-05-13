@@ -73,9 +73,8 @@ function deleteContact(id) {
 
 const contactsListElement = document.getElementById("contacts-list");
 
-contactsListElement.innerHTML = contacts[0].name + " " + contacts[0].address;
-
 for (let index = 0; index < contacts.length; index++) {
   const contact = contacts[index];
   console.log(contact);
+  contactsListElement.innerHTML += contact.name + " " + contact.address;
 }
