@@ -65,21 +65,11 @@ function addContact(name, age, email, phone, address, country) {
   });
 }
 
-addContact(
-  "siregar",
-  30,
-  "siregar@gmail.com",
-  "Jakarta",
-  "+628122066789",
-  "Indonesia"
-);
-addContact(
-  "Muhammad Raihan",
-  21,
-  "m.raihan@gmail.com",
-  "Banda Aceh",
-  "+62232244",
-  "Indonesia"
-);
+function deleteContact(id) {
+  const updatedContacts = contacts.filter((contact) => contact.id !== id);
+  contacts = updatedContacts;
+  return contacts;
+}
 
-listContacts();
+const contactsListElement = document.getElementById("contacts-list");
+console.log(contactsListElement);
