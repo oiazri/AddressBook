@@ -72,4 +72,5 @@ function deleteContact(id) {
 }
 
 const contactsListElement = document.getElementById("contacts-list");
-console.log(contactsListElement);
+
+contactsListElement.innerHTML = contacts[0].name;
