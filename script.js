@@ -76,6 +76,14 @@ const contactsListElement = document.getElementById("contacts-list");
 for (let index = 0; index < contacts.length; index++) {
   const contact = contacts[index];
   console.log(contact);
-  contactsListElement.innerHTML +=
-    "<li>" + contact.name + " " + contact.address + "</li>";
+  contactsListElement.innerHTML += `
+  <li>
+  <h2>${contact.name}</h2>
+  <p> ID ${contact.id}</p>
+  <p>${contact.age} year old </p>
+  <p>${contact.email}</p>
+  <p>${contact.phone}</p>
+  <p>${contact.address}</p>
+  <p>${contact.country}</p>
+  <li/>`;
 }
